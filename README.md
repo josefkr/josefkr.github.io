@@ -1,2 +1,2 @@
-# ruppenhofer.githb.io
+# ruppenhofer.github.io
 personal pages
