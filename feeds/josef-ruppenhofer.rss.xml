@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"><channel><title>Josef Ruppenhofer</title><link>http://ruppenhofer.de/</link><description></description><lastBuildDate>Sun, 19 Jun 2016 11:09:00 +0200</lastBuildDate><item><title>Welcome</title><link>http://ruppenhofer.de/welcome.html</link><description>&lt;p&gt;&lt;img alt="Alt Text" src="http://ruppenhofer.de/images/josef_ruppenhofer_small.jpg" /&gt;&lt;/p&gt;
+&lt;p&gt;to my website. In  May 2016&lt;/span&gt; I joined the &lt;a href="http://wisscamp.de/en/"&gt;Leibniz Science Campus&lt;/a&gt;, a collaborative project run by the &lt;a href="http://www1.ids-mannheim.de/start/"&gt;Institute for German Language&lt;/a&gt; and the &lt;a href="http://www.cl.uni-heidelberg.de/"&gt;Institute of Computational Linguistics at Heidelberg University&lt;/a&gt;.
+Before that, I had the pleasure of working at the Department of Information Science and Natural Language Processing at the University of Hildesheim in the computational linguistics group of Prof. Ulrich Heid. &lt;/br&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Josef Ruppenhofer</dc:creator><pubDate>Sun, 19 Jun 2016 11:09:00 +0200</pubDate><guid isPermaLink="false">tag:ruppenhofer.de,2016-06-19:welcome.html</guid><category>welcome</category></item><item><title>CQP Youtube Tutorial</title><link>http://ruppenhofer.de/cqp.html</link><description>&lt;p&gt;The &lt;a href="http://cwb.sourceforge.net/"&gt;Corpus Workbench&lt;/a&gt; is now represented on YouTube. Here is a videa that shows how
+to access corpora via the CQPWeb&amp;nbsp;Browser-Interface:&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://www.youtube.com/user/corpusworkbench" target="_blank"&gt;http://www.youtube.com/user/corpusworkbench&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;We provide a series of short video snippets in German that discuss &lt;a href="http://147.172.85.37/cqp/"&gt;using cqp on the linux command line&lt;/a&gt;.&lt;/p&gt;
+&lt;!--Below you can find a series of short video snippets in German that discuss using cqp on the linux command line.
+At the moment, there are bits missing. I'll try to recover them and have the complete set of videos up here.
+
+ * &lt;a href="http://www.uni-hildesheim.de/ruppenhofer/data/mehrere_attribute.ogv"&gt;mehrere attribute&lt;/a&gt;
+ * &lt;a href="http://www.uni-hildesheim.de/ruppenhofer/data/anzeige_veraendern.ogv"&gt;anzeige veraendern&lt;/a&gt;
+ * &lt;a href="http://www.uni-hildesheim.de/ruppenhofer/data/randomisieren.ogv"&gt;randomisieren&lt;/a&gt;
+ * &lt;a href="http://www.uni-hildesheim.de/ruppenhofer/data/sortieren.ogv"&gt;sortieren&lt;/a&gt;--&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Josef Ruppenhofer</dc:creator><pubDate>Mon, 06 Jul 2015 10:20:00 +0200</pubDate><guid isPermaLink="false">tag:ruppenhofer.de,2015-07-06:cqp.html</guid><category>corpus software</category></item><item><title>KONVENS 2014</title><link>http://ruppenhofer.de/KONVENS.html</link><description>&lt;p&gt;The Conference on Natural Language Processing (“Konferenz zur Verarbeitung Natürlicher Sprache”, &lt;span class="caps"&gt;KONVENS&lt;/span&gt;) took  place in Hildesheim in October 2014. Together with Ulrich Heid  and Gertrud Faaß, I was a member of the local organizing committee. Here are some &lt;a href="http://www.uni-hildesheim.de/konvens2014/Thank%20you.html"&gt;images&lt;/a&gt;.
+&lt;!--http://www.uni-hildesheim.de/konvens2014/--&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Josef Ruppenhofer</dc:creator><pubDate>Fri, 01 Aug 2014 00:00:00 +0200</pubDate><guid isPermaLink="false">tag:ruppenhofer.de,2014-08-01:KONVENS.html</guid><category>conference</category><category>CL</category><category>NLP</category></item><item><title>Salto annotation</title><link>http://ruppenhofer.de/salto-prep.html</link><description>&lt;p&gt;Scenario: you want to do some kind of linguistic annotation that can be cast as an annotation problem to be done on top of a parse tree within Salto. Typical candidates: frame semantic annotation; co-reference; sentiment analysis; etc. Normally, people annotate on top of constituency syntax within&amp;nbsp;Salto.&lt;/p&gt;
+&lt;p&gt;&lt;span style="color: darkgreen"&gt;If you are part of Iwist at Hildesheim, you can find local info &lt;a href="./pages/salto-vorverarbeitung.html"&gt;here&lt;/a&gt;. &lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;-1) What you&amp;nbsp;need:&lt;/p&gt;
+&lt;p&gt;- OpenNLP installed (also get some  models)
+  - BerkeleyParser installed
+  - TigerRegistry/TigerSearch installed
+  - Salto
+  - Plain text data (and this means something in a file ending in .txt or some such; no .rtf, .doc, or .docx&amp;nbsp;allowed!)&lt;/p&gt;
+&lt;p&gt;0)  Character sets: check that you have a consistent character encoding and that that encoding works with all the tools you want to use. This is often more easily said than done but here&amp;#8217;s that piece of advice anyway. If you need to convert, then iconv may be able to help you (at least on&amp;nbsp;linux).&lt;/p&gt;
+&lt;p&gt;1) Sentence splitting and&amp;nbsp;tokenization&lt;/p&gt;
+&lt;p&gt;a) using opennlp&amp;nbsp;&amp;#8221;sentencedetector&amp;#8221;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;
+/your/path/to/apache-opennlp-1.5.2-incubating/bin$ ./opennlp SentenceDetector ../models/en-sent.bin &amp;lt; ~/Desktop/tmp/input_file.txt &amp;gt; ~/Desktop/tmp/input_file.snt
+&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;The above assumes that the models for opennlp are in a sister directory to the bin&amp;nbsp;directory.&lt;/p&gt;
+&lt;p&gt;b) opennlp also has  a penn treebank-style &amp;#8221;tokenizer&amp;#8221;.
+You could also use&amp;nbsp;ntlk.&lt;/p&gt;
+&lt;p&gt;In any event, if your data set is not extremely large and/or if it is kind of different from the newspaper language on which nlp tools are trained, it is recommended to hand check and fix the sentence splits and tokenization. It can save you a lot of unhappiness later&amp;nbsp;on.&lt;/p&gt;
+&lt;p&gt;2) parsing with the Berkeley&amp;nbsp;Parser&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;
+java -jar berkeleyParser.jar -gr ger_sm5.gr &lt;input_file.snt &gt;out.txt
+&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class="caps"&gt;NB&lt;/span&gt;: the parameter &amp;#8220;-gr&amp;#8221; specifies the grammar that is to be used. Depending on the parser version and/or the language you want to parse, you may need something other than what was used in the example&amp;nbsp;above.&lt;/p&gt;
+&lt;p&gt;Your parses will likely not be 100% correct. You won&amp;#8217;t be able to edit them in Salto. I won&amp;#8217;t give a recommendation on how you might fix incorrect parses with&amp;nbsp;ease.&lt;/p&gt;
+&lt;p&gt;3)&amp;nbsp;TigerRegistry&lt;/p&gt;
+&lt;p&gt;We want to read the bracketed parser output into&amp;nbsp;TigerRegistry.&lt;/p&gt;
+&lt;p&gt;Important: check for empty parses before reading things into TigerRegistry and fix them before, or else you&amp;#8217;ll have a&amp;nbsp;problem.&lt;/p&gt;
+&lt;p&gt;4) TigerSearch: do  some query that will match every sentence. For instance, look for a token. Then export the results to&amp;nbsp;xml.&lt;/p&gt;
+&lt;p&gt;5) TreeTagger: because Salto requires it, you need to provide lemma information for the terminals in your tree.  You can get real lemma info from the treetagger or from someplace else. If you don&amp;#8217;t have lemmas, Salto really won&amp;#8217;t want to play with your file. Btw: you can  just use perl or whatever to insert empty lemma=&amp;#8221;&amp;#8221; attributes&amp;#8212;Salto doesn&amp;#8217;t care whether you have useful values&amp;nbsp;specified.&lt;/p&gt;
+&lt;p&gt;6) Voila, you&amp;#8217;ve got an xml file that you can open in Salto. What is still up to you is to define the annotation&amp;nbsp;frame(s).&lt;/p&gt;
+&lt;p&gt;7) Extra credit: in order to be able to do annotation in Salto that crosses sentence boundaries, you need to take the directory for your newly created  corpus  that exists somewhere under the TigerRegistry directory and copy it into the &lt;i&gt;corpora&lt;/i&gt; subdirectory under your Salto installation directory. When you open an xml file in Salto, you&amp;#8217;ll be asked to pick out the corpus from which the xml file was drawn and then you can point to the relevant corpus, thereby enabling cross-sentence&amp;nbsp;annotation.&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Josef Ruppenhofer</dc:creator><pubDate>Thu, 30 May 2013 10:20:00 +0200</pubDate><guid isPermaLink="false">tag:ruppenhofer.de,2013-05-30:salto-prep.html</guid><category>annotation</category></item></channel></rss>

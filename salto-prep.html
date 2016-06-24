@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Salto annotation - Josef Ruppenhofer</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="http://ruppenhofer.de/salto-prep.html">
+
+        <meta name="author" content="Josef Ruppenhofer" />
+        <meta name="keywords" content="annotation" />
+        <meta name="description" content="Preparing data for annotation in Salto" />
+
+        <meta property="og:site_name" content="Josef Ruppenhofer" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Salto annotation"/>
+        <meta property="og:url" content="http://ruppenhofer.de/salto-prep.html"/>
+        <meta property="og:description" content="Preparing data for annotation in Salto"/>
+        <meta property="article:published_time" content="2013-05-30" />
+            <meta property="article:section" content="Blog" />
+            <meta property="article:tag" content="annotation" />
+            <meta property="article:author" content="Josef Ruppenhofer" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="http://ruppenhofer.de/theme/css/bootstrap.min.css" type="text/css"/>
+    <link href="http://ruppenhofer.de/theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="http://ruppenhofer.de/theme/css/pygments/native.css" rel="stylesheet">
+        <link href="http://ruppenhofer.de/theme/css/typogrify.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://ruppenhofer.de/theme/css/style.css" type="text/css"/>
+
+        <link href="http://ruppenhofer.de/feeds/all.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Josef Ruppenhofer ATOM Feed"/>
+
+
+
+        <link href="http://ruppenhofer.de/feeds/blog.atom.xml" type="application/atom+xml" rel="alternate"
+              title="Josef Ruppenhofer Blog ATOM Feed"/>
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="http://ruppenhofer.de/" class="navbar-brand">
+Josef Ruppenhofer            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                    <li><a href="http://ruppenhofer.de/pages/Affiliations.html">Affiliations</a></li>
+                    <li><a href="http://ruppenhofer.de/pages/contact.html">Contact</a></li>
+                    <li><a href="http://ruppenhofer.de/pages/data sets.html">Datasets</a></li>
+                    <li><a href="http://ruppenhofer.de/pages/research interests.html">Research</a></li>
+                    <li><a href="http://ruppenhofer.de/pages/publications.html">Publications</a></li>
+                    <li><a href="http://ruppenhofer.de/pages/teaching.html">Teaching</a></li>
+                        <li class="active">
+                            <a href="http://ruppenhofer.de/category/blog.html">Blog</a>
+                        </li>
+                        <li >
+                            <a href="http://ruppenhofer.de/category/general.html">General</a>
+                        </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="http://ruppenhofer.de/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="http://ruppenhofer.de/salto-prep.html"
+                       rel="bookmark"
+                       title="Permalink to Salto annotation">
+                        Salto&nbsp;annotation
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2013-05-30T10:20:00+02:00"> Do 30 Mai 2013</time>
+    </span>
+
+
+
+
+
+<span class="label label-default">Tags</span>
+	<a href="http://ruppenhofer.de/tag/annotation.html">annotation</a>
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>Scenario: you want to do some kind of linguistic annotation that can be cast as an annotation problem to be done on top of a parse tree within Salto. Typical candidates: frame semantic annotation; co-reference; sentiment analysis; etc. Normally, people annotate on top of constituency syntax within&nbsp;Salto.</p>
+<p><span style="color: darkgreen">If you are part of Iwist at Hildesheim, you can find local info <a href="./pages/salto-vorverarbeitung.html">here</a>. </span></p>
+<p>-1) What you&nbsp;need:</p>
+<p>- OpenNLP installed (also get some  models)
+  - BerkeleyParser installed
+  - TigerRegistry/TigerSearch installed
+  - Salto
+  - Plain text data (and this means something in a file ending in .txt or some such; no .rtf, .doc, or .docx&nbsp;allowed!)</p>
+<p>0)  Character sets: check that you have a consistent character encoding and that that encoding works with all the tools you want to use. This is often more easily said than done but here&#8217;s that piece of advice anyway. If you need to convert, then iconv may be able to help you (at least on&nbsp;linux).</p>
+<p>1) Sentence splitting and&nbsp;tokenization</p>
+<p>a) using opennlp&nbsp;&#8221;sentencedetector&#8221;</p>
+<p><code>
+/your/path/to/apache-opennlp-1.5.2-incubating/bin$ ./opennlp SentenceDetector ../models/en-sent.bin &lt; ~/Desktop/tmp/input_file.txt &gt; ~/Desktop/tmp/input_file.snt
+</code></p>
+<p>The above assumes that the models for opennlp are in a sister directory to the bin&nbsp;directory.</p>
+<p>b) opennlp also has  a penn treebank-style &#8221;tokenizer&#8221;.
+You could also use&nbsp;ntlk.</p>
+<p>In any event, if your data set is not extremely large and/or if it is kind of different from the newspaper language on which nlp tools are trained, it is recommended to hand check and fix the sentence splits and tokenization. It can save you a lot of unhappiness later&nbsp;on.</p>
+<p>2) parsing with the Berkeley&nbsp;Parser</p>
+<p><code>
+java -jar berkeleyParser.jar -gr ger_sm5.gr <input_file.snt >out.txt
+</code></p>
+<p><span class="caps">NB</span>: the parameter &#8220;-gr&#8221; specifies the grammar that is to be used. Depending on the parser version and/or the language you want to parse, you may need something other than what was used in the example&nbsp;above.</p>
+<p>Your parses will likely not be 100% correct. You won&#8217;t be able to edit them in Salto. I won&#8217;t give a recommendation on how you might fix incorrect parses with&nbsp;ease.</p>
+<p>3)&nbsp;TigerRegistry</p>
+<p>We want to read the bracketed parser output into&nbsp;TigerRegistry.</p>
+<p>Important: check for empty parses before reading things into TigerRegistry and fix them before, or else you&#8217;ll have a&nbsp;problem.</p>
+<p>4) TigerSearch: do  some query that will match every sentence. For instance, look for a token. Then export the results to&nbsp;xml.</p>
+<p>5) TreeTagger: because Salto requires it, you need to provide lemma information for the terminals in your tree.  You can get real lemma info from the treetagger or from someplace else. If you don&#8217;t have lemmas, Salto really won&#8217;t want to play with your file. Btw: you can  just use perl or whatever to insert empty lemma=&#8221;&#8221; attributes&#8212;Salto doesn&#8217;t care whether you have useful values&nbsp;specified.</p>
+<p>6) Voila, you&#8217;ve got an xml file that you can open in Salto. What is still up to you is to define the annotation&nbsp;frame(s).</p>
+<p>7) Extra credit: in order to be able to do annotation in Salto that crosses sentence boundaries, you need to take the directory for your newly created  corpus  that exists somewhere under the TigerRegistry directory and copy it into the <i>corpora</i> subdirectory under your Salto installation directory. When you open an xml file in Salto, you&#8217;ll be asked to pick out the corpus from which the xml file was drawn and then you can point to the relevant corpus, thereby enabling cross-sentence&nbsp;annotation.</p>
+            </div>
+            <!-- /.entry-content -->
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+
+
+
+
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://wisscamp.de/en/" target="_blank">
+                LWC
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="http://getpelican.com/" target="_blank">
+                Pelican
+            </a>
+        </li>
+      </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2016 
+            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="http://ruppenhofer.de/theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="http://ruppenhofer.de/theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="http://ruppenhofer.de/theme/js/respond.min.js"></script>
+
+
+</body>
+</html>
