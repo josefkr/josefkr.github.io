@@ -106,11 +106,12 @@ Josef Ruppenhofer            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <p>Last update: Thu Jan 19 16:16:08 <span class="caps">CET</span>&nbsp;2017 </p>
+                <p>Last update: Wed Jan 25 20:24:22 <span class="caps">CET</span>&nbsp;2017</p>
 <p>This is a brief note about what to do to get 
 <a href="https://github.com/microth/mateplus">mateplus </a>
-running for the purpose of framenet-style semantic role&nbsp;labeling.</p>
-<p><span class="caps">NB</span>: the info below may not be complete as it is reconstructed from memory
+running for the purpose of framenet-style semantic role labeling.
+Thanks to Michael Roth for advice and comments on an earlier&nbsp;version.</p>
+<p><span class="caps">NB</span>: the info below may (still) not be complete as it was reconstructed from memory
  after I got mateplus running. Please let me know if anything is missing
  so I can update&nbsp;this.</p>
 <h1>Download the&nbsp;models</h1>
@@ -145,10 +146,12 @@ go into the &#8220;release&#8221; directory of semafor 2-1. In there, modify the
 <li>edit the file &#8220;bin/config.sh&#8221; to set&nbsp;paths</li>
 <li>start the server mode : adjust paths , ports and memory in the command as&nbsp;needed</li>
 <li>note the port number: you will need it later for the setup of&nbsp;mateplus</li>
+<li>Although semafor 3 is packaged with a model for <span class="caps">MALT</span> (http://www.ark.cs.cmu.edu/<span class="caps">SEMAFOR</span>/semafor_malt_model_20121129.tar.gz), Michael Roth told us that in his work he used the <span class="caps">MST</span> model that comes with semafor 2.1. The &#8220;models&#8221; directroy of semafor2-1. that you want to use should contain a file&nbsp;&#8220;wsj.model&#8221;.</li>
 </ul>
-<p>java -Xms6g -Xmx6g -cp target/Semafor-3.0-alpha-04.jar edu.cmu.cs.lti.ark.fn.SemaforSocketServer model-dir:/mnt/medium/tools/maltparser/semafor_malt_model&nbsp;port:8043</p>
+<p>java -Xms6g -Xmx6g -cp target/Semafor-3.0-alpha-04.jar edu.cmu.cs.lti.ark.fn.SemaforSocketServer model-dir:/mnt/medium/tools/semafor-semantic-parser-2.1/models&nbsp;port:8043</p>
 <h1>stanford&nbsp;corenlp</h1>
-<p>Use stanford corenlp version 3.7: the mateplus readme online mentions &#8220;3.x.x&#8221; but at this point no other versions  &gt;= 3..0.0 work if you want to use the frame semantic  parsing&nbsp;scripts.</p>
+<p>I recommend using stanford corenlp version 3.7: it works for all of the scripts that come with mateplus.
+As far as I remmeber, some lower-numbered versions don&#8217;t work for the non-frame-semantic <em>parse.sh</em>&nbsp;script.</p>
 <h1>adjust&nbsp;&#8220;glove&#8221;</h1>
 <ul>
 <li>
@@ -165,7 +168,9 @@ go into the &#8220;release&#8221; directory of semafor 2-1. In there, modify the
  <span class="caps">MEMORY</span>=10.0 // set depending on your hardware: the implicit unit assumed here is <span class="caps">GB</span>!</p>
 </blockquote>
 <p><span class="caps">NB</span>: a brief caveat: So far I have only run mateplus on mini example files with two sentences or so.
-However, i&#8217;ve noticed that the temp files for cooccurrences (coocs) and shufflings (coocs.shuf) that glove creates in the tmp dir are always empty. I am not sure if this is suspicous and means that glove is not correctly&nbsp;configured.</p>
+However, i&#8217;ve noticed that the temp files for cooccurrences (coocs) and shufflings (coocs.shuf) that glove creates in the tmp dir are always empty. I am not sure if this is suspicous and means that glove is not correctly configured.<br/>
+Update: Michael Roth says this is a known problem occurring with smaller files for the version of glove that is part of mateplus.
+I.e. the installation per se is ok, even if for small files you get empty&nbsp;coocs-files.</p>
 <blockquote>
 <p>-rw-rw-r&#8212;  1 ruppenho ruppenho    0 Jan 19 22:55 glv3829134863266861581.txt.coocs<br />
 -rw-rw-r&#8212;  1 ruppenho ruppenho    0 Jan 19 22:55&nbsp;glv3829134863266861581.txt.coocs.shuf</p>
@@ -245,10 +250,10 @@ inside the dir &#8220;glovey&#8221; again - those files are what I used. In part
 <p>I am using slightly older versions of opennlp-maxent<em> and opennlp-tools</em> that I already had. I assume the newer versions that Michael Roth specified in his readme would work as well.  Some of my files are just symlinked, which is&nbsp;ok.</p>
 <ul>
 <li>anna-3.3.jar</li>
-<li>CoNLL2009-<span class="caps">ST</span>-English-<span class="caps">ALL</span>.anna-3.3.lemmatizer.model*</li>
-<li>CoNLL2009-<span class="caps">ST</span>-English-<span class="caps">ALL</span>.anna-3.3.parser.model*</li>
-<li>CoNLL2009-<span class="caps">ST</span>-English-<span class="caps">ALL</span>.anna-3.3.postagger.model*</li>
-<li>CoNLL2009-<span class="caps">ST</span>-English-<span class="caps">ALL</span>.anna-3.3.srl-4.1.srl.model*</li>
+<li>CoNLL2009-<span class="caps">ST</span>-English-<span class="caps">ALL</span>.anna-3.3.lemmatizer.model* (not needed if you use <span class="caps">MXPOST</span>/<span class="caps">MST</span>-Parser for&nbsp;preprocessing)</li>
+<li>CoNLL2009-<span class="caps">ST</span>-English-<span class="caps">ALL</span>.anna-3.3.parser.model* (not needed if you use <span class="caps">MXPOST</span>/<span class="caps">MST</span>-Parser for&nbsp;preprocessing)</li>
+<li>CoNLL2009-<span class="caps">ST</span>-English-<span class="caps">ALL</span>.anna-3.3.postagger.model* (not needed if you use <span class="caps">MXPOST</span>/<span class="caps">MST</span>-Parser for&nbsp;preprocessing)</li>
+<li>CoNLL2009-<span class="caps">ST</span>-English-<span class="caps">ALL</span>.anna-3.3.srl-4.1.srl.model* (not needed if you use <span class="caps">MXPOST</span>/<span class="caps">MST</span>-Parser for&nbsp;preprocessing)</li>
 <li>cooccur*</li>
 <li>cooccur++*</li>
 <li>cooccur.c</li>
@@ -273,9 +278,9 @@ inside the dir &#8220;glovey&#8221; again - those files are what I used. In part
 <li>scaleparams.txt</li>
 <li>shuffle*</li>
 <li>shuffle.c</li>
-<li>srl-<span class="caps">EMNLP14</span>+fs-eng.model*</li>
-<li>srl-<span class="caps">EMNLP14</span>+fs-extger.model*</li>
-<li>srl-<span class="caps">EMNLP14</span>+fs-ger.model*</li>
+<li>srl-<span class="caps">EMNLP14</span>+fs-eng.model* (not used by frame semantic&nbsp;srl)</li>
+<li>srl-<span class="caps">EMNLP14</span>+fs-extger.model* (used for german srl&nbsp;only)</li>
+<li>srl-<span class="caps">EMNLP14</span>+fs-ger.model* (used for german srl&nbsp;only)</li>
 <li>srl-<span class="caps">TACL15</span>-eng.model*</li>
 <li>stanford-corenlp-3.7.0.jar -&gt;&nbsp;/mnt/medium/tools/stanfordCoreNLP/stanford-corenlp-full-2016-10-31/+stanford-corenlp-3.7.0.jar</li>
 <li>stanford-corenlp-3.7.0-javadoc.jar -&gt;&nbsp;/mnt/medium/tools/stanfordCoreNLP/stanford-corenlp-full-2016-10-31/stanford-corenlp-3.7.0-javadoc.jar</li>
