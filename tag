@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Josef Ruppenhofer | articles in the "General" category</title>
+    <title>Josef Ruppenhofer | articles tagged "welcome"</title>
     <link rel="shortcut icon" type="image/png" href="/favicon.png">
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
     <link rel="stylesheet" href="/theme/css/screen.css" type="text/css" />
@@ -17,8 +17,7 @@
     <header>
         <nav>
             <ul>
-
-                <li class="ephemeral selected"><a href="/category/general.html">General</a></li>
+                <li class="ephemeral selected"><a href="/tag/welcome.html">welcome</a></li>
                 <li><a href="/">Home</a></li>
                 <li><a href="/pages/Affiliations.html">Affiliations</a></li>
                 <li><a href="/pages/Contact.html">Contact</a></li>
@@ -51,7 +50,7 @@
                     <a href="/welcome.html">posted at 16:09</a>
                     &nbsp;&middot;&nbsp;<a href="/category/general.html" rel="tag">General</a>
                     &nbsp;&middot;
-                    &nbsp;<a href="/tag/welcome.html" class="tags">welcome</a>
+                    &nbsp;<a href="/tag/welcome.html" class="tags selected">welcome</a>
                 </div>
             </article>
 

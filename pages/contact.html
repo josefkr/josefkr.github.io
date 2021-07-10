@@ -1,151 +1,112 @@
 <!DOCTYPE html>
-<html lang="en"
->
+<html lang="en">
 <head>
-    <title>Contact - Josef Ruppenhofer</title>
-    <!-- Using the latest rendering mode for IE -->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>Josef Ruppenhofer</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charset="utf-8" />
+        <!-- twitter card metadata -->
+<meta name="twitter:site" content="">
+<meta name="twitter:title" content="Contact">
+<meta name="twitter:description" content="">
+        <!-- OG Tags -->
+<meta property="og:url" content="/pages/contact.html"/>
+<meta property="og:title" content="Josef Ruppenhofer | Contact" />
+<meta property="og:description" content="" />
+        <!-- favicon -->
+        <!-- moment.js for date formatting -->
+        <script src="/theme/js/moment.js"></script>
+        <!-- css -->
+        <link rel="stylesheet" type="text/css" href="/theme/css/main.css" />
+		<script>
+			
+                /*! grunt-grunticon Stylesheet Loader - v2.1.2 | https://github.com/filamentgroup/grunticon | (c) 2015 Scott Jehl, Filament Group, Inc. | MIT license. */
+    
+    (function(e){function t(t,n,r,o){"use strict";function a(){for(var e,n=0;u.length>n;n++)u[n].href&&u[n].href.indexOf(t)>-1&&(e=!0);e?i.media=r||"all":setTimeout(a)}var i=e.document.createElement("link"),l=n||e.document.getElementsByTagName("script")[0],u=e.document.styleSheets;return i.rel="stylesheet",i.href=t,i.media="only x",i.onload=o||null,l.parentNode.insertBefore(i,l),a(),i}var n=function(r,o){"use strict";if(r&&3===r.length){var a=e.navigator,i=e.Image,l=!(!document.createElementNS||!document.createElementNS("http://www.w3.org/2000/svg","svg").createSVGRect||!document.implementation.hasFeature("http://www.w3.org/TR/SVG11/feature#Image","1.1")||e.opera&&-1===a.userAgent.indexOf("Chrome")||-1!==a.userAgent.indexOf("Series40")),u=new i;u.onerror=function(){n.method="png",n.href=r[2],t(r[2])},u.onload=function(){var e=1===u.width&&1===u.height,a=r[e&&l?0:e?1:2];n.method=e&&l?"svg":e?"datapng":"png",n.href=a,t(a,null,null,o)},u.src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==",document.documentElement.className+=" grunticon"}};n.loadCSS=t,e.grunticon=n})(this);(function(e,t){"use strict";var n=t.document,r="grunticon:",o=function(e){if(n.attachEvent?"complete"===n.readyState:"loading"!==n.readyState)e();else{var t=!1;n.addEventListener("readystatechange",function(){t||(t=!0,e())},!1)}},a=function(e){return t.document.querySelector('link[href$="'+e+'"]')},c=function(e){var t,n,o,a,c,i,u={};if(t=e.sheet,!t)return u;n=t.cssRules?t.cssRules:t.rules;for(var l=0;n.length>l;l++)o=n[l].cssText,a=r+n[l].selectorText,c=o.split(");")[0].match(/US\-ASCII\,([^"']+)/),c&&c[1]&&(i=decodeURIComponent(c[1]),u[a]=i);return u},i=function(e){var t,o,a;o="data-grunticon-embed";for(var c in e)if(a=c.slice(r.length),t=n.querySelectorAll(a+"["+o+"]"),t.length)for(var i=0;t.length>i;i++)t[i].innerHTML=e[c],t[i].style.backgroundImage="none",t[i].removeAttribute(o);return t},u=function(t){"svg"===e.method&&o(function(){i(c(a(e.href))),"function"==typeof t&&t()})};e.embedIcons=i,e.getCSS=a,e.getIcons=c,e.ready=o,e.svgLoadedCallback=u,e.embedSVG=u})(grunticon,this);
+                
+                grunticon(["/theme/css/icons.data.svg.css", "/theme/css/icons.data.png.css", "/theme/css/icons.fallback.css"]);
+            </script>
+        <noscript><link href="/theme/css/icons.fallback.css" rel="stylesheet"></noscript>
+        <!-- menu toggle javascript -->
+        <script type="text/javascript">
+            document.addEventListener("DOMContentLoaded", initMenu);
+            
+            function initMenu(){
+                var menu = document.getElementById("menu");
+                var menulink = document.getElementById("menu-link");
+                menulink.addEventListener("click", function toggleMenu(){
+                        window.event.preventDefault();
+                        menulink.classList.toggle('active');
+                        menu.classList.toggle('active');              
+                    });
+            };
+        </script>
 
 
-
-<link rel="canonical" href="http://ruppenhofer.de/pages/contact.html">
-
-        <meta name="author" content="Josef Ruppenhofer" />
-        <meta name="description" content="Contact" />
-
-    <meta property="og:site_name" content="Josef Ruppenhofer" />
-    <meta property="og:type" content="article"/>
-    <meta property="og:title" content="Contact"/>
-    <meta property="og:url" content="http://ruppenhofer.de/pages/contact.html"/>
-    <meta property="og:description" content="Contact" />
-
-
-    <!-- Bootstrap -->
-        <link rel="stylesheet" href="http://ruppenhofer.de/theme/css/bootstrap.min.css" type="text/css"/>
-    <link href="http://ruppenhofer.de/theme/css/font-awesome.min.css" rel="stylesheet">
-
-    <link href="http://ruppenhofer.de/theme/css/pygments/native.css" rel="stylesheet">
-        <link href="http://ruppenhofer.de/theme/css/typogrify.css" rel="stylesheet">
-    <link rel="stylesheet" href="http://ruppenhofer.de/theme/css/style.css" type="text/css"/>
-
+    <meta name="tags" content="contact" />
 
 </head>
 <body>
-
-<div class="navbar navbar-default navbar-fixed-top" role="navigation">
-	<div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a href="http://ruppenhofer.de/" class="navbar-brand">
-Josef Ruppenhofer            </a>
-        </div>
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-            <ul class="nav navbar-nav">
-                    <li><a href="http://ruppenhofer.de/pages/Affiliations.html">Affiliations</a></li>
-                    <li><a href="http://ruppenhofer.de/pages/contact.html">Contact</a></li>
-                    <li><a href="http://ruppenhofer.de/pages/data sets.html">Datasets</a></li>
-                    <li><a href="http://ruppenhofer.de/pages/research interests.html">Research</a></li>
-                    <li><a href="http://ruppenhofer.de/pages/publications.html">Publications</a></li>
-                    <li><a href="http://ruppenhofer.de/pages/teaching.html">Teaching</a></li>
-                        <li >
-                            <a href="http://ruppenhofer.de/category/blog.html">Blog</a>
-                        </li>
-                        <li >
-                            <a href="http://ruppenhofer.de/category/general.html">General</a>
-                        </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="http://ruppenhofer.de/archives.html"><i class="fa fa-th-list"></i><span class="icon-label">Archives</span></a></li>
-            </ul>
-        </div>
-        <!-- /.navbar-collapse -->
-    </div>
-</div> <!-- /.navbar -->
-<!-- Banner -->
-<!-- End Banner -->
-<div class="container">
-    <div class="row">
-        <div class="col-sm-9">
-
-    <section id="content" class="body">
-        <h1 class="entry-title">Contact</h1>
-        
-        <div class="entry-content">
-            <p><br /></p>
-<h3>Physical&nbsp;address</h3>
-<p><table> 
- <tr><td colspan="2"><a href="https://www1.ids-mannheim.de/">Leibniz-Institut für Deutsche Sprache </a></td> </tr>
-<tr><td colspan="2">R5, 6-13 Mannheim</td></tr>
-<tr><td colspan="2">68161 Mannheim</td></tr>
-</table></p>
-<h3>Virtual&nbsp;contact</h3>
-<p><table> 
-<tr> <td>Phone</td><td>00 49 621 1581-108 </td> </tr>
-<tr><td>https://www1.ids-mannheim.de/prag/personal/ruppenhofer.html</td></t>
-<tr> <td>Email</td><td> last_name <span class="caps">DOT</span> ids-mannheim <span class="caps">DOT</span> de </td> </tr>
-</table></p>
-        </div>
-    </section>
-        </div>
-        <div class="col-sm-3" id="sidebar">
-            <aside>
-
-<section class="well well-sm">
-    <ul class="list-group list-group-flush">
-
-
-
-            <li class="list-group-item"><a href="http://ruppenhofer.de/"><h4><i class="fa fa-tags fa-lg"></i><span class="icon-label">Tags</span></h4></a>
-                <ul class="list-group " id="tags">
+    <div role="banner" id="masthead">
+        <header>
+            <h1><a href="/">'s Blog</a></h1>
+            <a href="#menu" id="menu-link">more stuff</a>
+            <nav id="menu">
+                <ul>
+                        <li><a href="/pages/Affiliations.html">Affiliations</a></li>
+                        <li class="active"><a href="/pages/contact.html">contact</a></li>
+                        <li><a href="/pages/data sets.html">data sets</a></li>
+                        <li><a href="/pages/research interests.html">research interests</a></li>
+                        <li><a href="/pages/publications by year.html">publications by year</a></li>
+                        <li><a href="/pages/professional service.html">professional service</a></li>
+                            <li><a href="/category/general.html">General</a></li>
                 </ul>
-            </li>
-    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
-      <ul class="list-group" id="links">
-        <li class="list-group-item">
-            <a href="http://wisscamp.de/en/" target="_blank">
-                LWC
-            </a>
-        </li>
-        <li class="list-group-item">
-            <a href="http://getpelican.com/" target="_blank">
-                Pelican
-            </a>
-        </li>
-      </ul>
-    </li>
-    </ul>
-</section>
-            </aside>
-        </div>
+            </nav>
+        </header>
     </div>
-</div>
-<footer>
-   <div class="container">
-      <hr>
-      <div class="row">
-         <div class="col-xs-10">&copy; 2019 
-            &middot; Powered by <a href="https://github.com/DandyDev/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
-            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
-            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>         </div>
-         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+        <div class="page" role="main">
+  <div class="article" role="article">
+    <article>
+        <footer>
+            <a name="top"></a>
+            <p>
+              <time datetime=" 2021-07-09 16:20:00+02:00">
+                <script>document.write(moment('2021-07-09 16:20:00+02:00').format('LL'));</script>
+              </time>
+            </p>
+        </footer>
+        <header>
+          <h2>
+            Contact
+          </h2>
+        </header>
+      <div class="content">
+         <p><br /></p>
+<h3>Physical&nbsp;Address</h3>
+<table> 
+ <tr><td colspan="2">Leibniz-Institut für Deutsche Sprache</a></td> </tr>
+<tr><td colspan="2">R5, 6-13</td></tr>
+<tr><td colspan="2">Office 108</td></tr>
+<tr><td colspan="2">68161 Mannheim</td></tr>
+</table>
+
+<h3>Virtual&nbsp;contact</h3>
+<table> 
+<tr> <td>Phone</td><td>(+49) 0621 / 1581-467 </td> </tr>
+<tr><td>Email</td><td>Last_name <span class="caps">AT</span> @ids-mannheim.de</td></tr>
+<tr><td><a href="https://www1.ids-mannheim.de/prag/personal/ruppenhofer.html"><span class="caps">IDS</span>-web page</a></td></tr>
+</table>
       </div>
-   </div>
-</footer>
-<script src="http://ruppenhofer.de/theme/js/jquery.min.js"></script>
-
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="http://ruppenhofer.de/theme/js/bootstrap.min.js"></script>
-
-<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
-<script src="http://ruppenhofer.de/theme/js/respond.min.js"></script>
-
-
+      <div class="back-to-top">
+          <a href="#top">back to top</a>
+      </div>
+    </article>
+  </div>
+<!-- end article -->
+                <footer>
+                    <div class="icons">
+                    </div>
+                    <p>© <script>document.write(moment().format('YYYY'));</script> Josef Ruppenhofer</p>
+                </footer>
+        </div>
 </body>
 </html>
